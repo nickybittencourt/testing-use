@@ -19,7 +19,7 @@ export default function Page() {
         </p>
       </div>
       <div style={{ display: 'none' }}>
-        {Array(100).fill('padding ').join('')}
+        {Array(10000).fill('padding ').join('')}
       </div>
       <Suspense fallback={<WeatherSkeleton />}>
         <WeatherWidget weatherPromise={weatherPromise} />
