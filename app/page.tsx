@@ -3,8 +3,6 @@ import { getWeather } from '@/lib/weather'
 import { WeatherWidget } from '@/components/weather-widget'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
-export const dynamic = 'force-dynamic'
-
 export default function Page() {
   // Start fetching the data on the server.
   // We pass the *promise* itself to the client component, not the awaited data.
@@ -20,7 +18,9 @@ export default function Page() {
           Streaming data from Server to Client using promises.
         </p>
       </div>
-
+      <div style={{ display: 'none' }}>
+        {Array(100).fill('padding ').join('')}
+      </div>
       <Suspense fallback={<WeatherSkeleton />}>
         <WeatherWidget weatherPromise={weatherPromise} />
       </Suspense>
